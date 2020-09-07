@@ -18,14 +18,14 @@ class FilterNotKey extends \Bloom\FilterRedis
     /**
      * @var array $hashFunction 哈希算法
      */
-    protected $hashFunction = array('BKDRHash', 'SDBMHash', 'JSHash');
+    protected $hashFunction = ['BKDRHash', 'SDBMHash', 'JSHash'];
 
 }
 
 /**
  * Redis
  */
-$config = [
+$config    = [
     'host'   => '127.0.0.1'
     , 'port' => 6379,
 ];
@@ -50,5 +50,5 @@ if (!$exit) {
 $exit = $filterObj->exists('33');
 var_dump($exit);
 
-echo "----[ok]----"."\n";
+echo "----[ok]----" . "\n";
 
