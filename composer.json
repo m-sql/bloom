@@ -1,0 +1,19 @@
+{
+    "name": "m-sql/boom",
+    "description": "PHP + redis bloom 过滤器",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "lucklidi",
+            "email": "lucklidi@126.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Bloom\\": "src"
+        }
+    }
+}
