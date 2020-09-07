@@ -65,6 +65,25 @@ abstract class FilterRedis
     }
 
     /**
+     * 移除集合中元素
+     *
+     * @param $string
+     * @return mixed
+     * @User : lidi
+     * @Email: lucklidi@126.com
+     * @Date : 2020-09-07
+     */
+    public function del($string)
+    {
+        $pipe = $this->Redis->multi();
+        foreach ($this->hashFunction as $function) {
+            $hash = $this->Hash->$function($string);
+            $pipe->setBit($this->bucket, $hash, 0);
+        }
+        return $pipe->exec();
+    }
+
+    /**
      * 查询是否存在（存在的有一定几率会误判, 不存在的一定不存在）
      *
      * @param $string
